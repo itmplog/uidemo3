@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="CategoryDemo">
+        <Preference
+            android:icon="@mipmap/ic_launcher"
+            android:key="preference"
+            android:summary="This is Summary"
+            android:title="Preference" />
+        <SwitchPreference
+            android:key="switch"
+            android:title="Switch"
+            android:summary="This is Switch" />
+        <CheckBoxPreference
+            android:key="checkbox"
+            android:title="CheckBox"
+            android:summary="This is CheckBox" />
+    </PreferenceCategory>
+</PreferenceScreen>
