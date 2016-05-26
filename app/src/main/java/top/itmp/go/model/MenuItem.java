@@ -1,8 +1,8 @@
-package top.itmp.uidemo3.model;
+package top.itmp.go.model;
 
 import java.util.ArrayList;
 
-import top.itmp.uidemo3.dummy;
+import top.itmp.go.dummy;
 
 /**
  * Created by hz on 16/5/23.

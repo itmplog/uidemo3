@@ -1,4 +1,4 @@
-package top.itmp.uidemo3.base;
+package top.itmp.go.base;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;

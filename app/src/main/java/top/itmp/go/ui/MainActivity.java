@@ -1,4 +1,4 @@
-package top.itmp.uidemo3.ui;
+package top.itmp.go.ui;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -24,9 +24,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import top.itmp.uidemo3.base.BaseActivity;
-import top.itmp.uidemo3.ui.fragment.MenuFragment;
-import top.itmp.uidemo3.R;
+import top.itmp.go.base.BaseActivity;
+import top.itmp.go.ui.fragment.MapFragment;
+import top.itmp.go.ui.fragment.MenuFragment;
+import top.itmp.go.R;
 
 public class MainActivity extends BaseActivity {
 
@@ -197,20 +198,7 @@ public class MainActivity extends BaseActivity {
                 public Fragment getItem(int position) {
                     switch (position) {
                         case 0:
-                            return new Fragment() {
-                                @Nullable
-                                @Override
-                                public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-                                    TextView textView1 = new TextView(container.getContext());
-                                    textView1.setText("hello world!!");
-                                    LinearLayout.LayoutParams lllp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                                            ViewGroup.LayoutParams.MATCH_PARENT);
-                                    textView1.setGravity(Gravity.CENTER);
-
-                                    textView1.setLayoutParams(lllp);
-                                    return textView1;
-                                }
-                            };
+                            return new MapFragment();
                         case 1:
                             return new Fragment() {
                                 @Nullable

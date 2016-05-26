@@ -10,7 +10,7 @@
         android:id="@+id/main_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="top.itmp.uidemo3.ui.MainActivity">
+        tools:context="top.itmp.go.ui.MainActivity">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar"

@@ -1,4 +1,4 @@
-package top.itmp.uidemo3.ui;
+package top.itmp.go.ui;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -16,8 +16,8 @@ import android.widget.LinearLayout;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import top.itmp.uidemo3.base.BaseActivity;
-import top.itmp.uidemo3.R;
+import top.itmp.go.base.BaseActivity;
+import top.itmp.go.R;
 
 /**
  * Created by hz on 16/5/23.

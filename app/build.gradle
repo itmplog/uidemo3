@@ -5,15 +5,20 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "top.itmp.uidemo3"
+        applicationId "top.itmp.go"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+
+        sourceSets.main {
+            jni.srcDirs = []
+            jniLibs.srcDir 'libs'
+        }
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

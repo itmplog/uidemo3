@@ -1,4 +1,4 @@
-package top.itmp.uidemo3;
+package top.itmp.go;
 
 /**
  * Created by hz on 16/5/23.

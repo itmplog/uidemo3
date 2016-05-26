@@ -1,4 +1,4 @@
-package top.itmp.uidemo3.ui.fragment;
+package top.itmp.go.ui.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,12 +16,12 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import top.itmp.uidemo3.R;
-import top.itmp.uidemo3.base.BaseFragment;
-import top.itmp.uidemo3.dummy;
-import top.itmp.uidemo3.model.MenuItem;
-import top.itmp.uidemo3.ui.MainActivity;
-import top.itmp.uidemo3.ui.SettingsActivity;
+import top.itmp.go.R;
+import top.itmp.go.base.BaseFragment;
+import top.itmp.go.dummy;
+import top.itmp.go.model.MenuItem;
+import top.itmp.go.ui.MainActivity;
+import top.itmp.go.ui.SettingsActivity;
 
 /**
  * Created by hz on 16/5/23.
