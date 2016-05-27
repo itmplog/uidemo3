@@ -1,5 +1,6 @@
 package top.itmp.go.ui;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -94,8 +95,8 @@ public class MainActivity extends BaseActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+               Intent intent = new Intent(MainActivity.this, MapActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -198,7 +199,7 @@ public class MainActivity extends BaseActivity {
                 public Fragment getItem(int position) {
                     switch (position) {
                         case 0:
-                            return new MapFragment();
+                            return new Fragment();
                         case 1:
                             return new Fragment() {
                                 @Nullable
