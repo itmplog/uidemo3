@@ -2,7 +2,6 @@ package top.itmp.uidemo3.ui;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
@@ -13,20 +12,18 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import top.itmp.uidemo3.base.BaseActivity;
-import top.itmp.uidemo3.ui.fragment.MenuFragment;
 import top.itmp.uidemo3.R;
+import top.itmp.uidemo3.base.BaseActivity;
+import top.itmp.uidemo3.ui.fragment.MainFragment;
+import top.itmp.uidemo3.ui.fragment.MenuFragment;
 
 public class MainActivity extends BaseActivity {
 
@@ -172,6 +169,7 @@ public class MainActivity extends BaseActivity {
          * The fragment argument representing the section number for this
          * fragment.
          */
+        private int sectionNumber;
 
         public PlaceholderFragment() {
         }
@@ -181,12 +179,22 @@ public class MainActivity extends BaseActivity {
          * number.
          */
         public static PlaceholderFragment newInstance(int sectionNumber) {
-            return new PlaceholderFragment();
+            PlaceholderFragment placeholderFragment = new PlaceholderFragment();
+            Bundle arguments = new Bundle();
+            arguments.putInt("sectionNumber", sectionNumber);
+            placeholderFragment.setArguments(arguments);
+            return placeholderFragment;
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+
+            Bundle arguments = getArguments();
+            if (arguments != null) {
+                sectionNumber = arguments.getInt("sectionNumber");
+            }
+
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
             final TabLayout tabs = (TabLayout) rootView.findViewById(R.id.tabs);
@@ -197,68 +205,13 @@ public class MainActivity extends BaseActivity {
                 public Fragment getItem(int position) {
                     switch (position) {
                         case 0:
-                            return new Fragment() {
-                                @Nullable
-                                @Override
-                                public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-                                    TextView textView1 = new TextView(container.getContext());
-                                    textView1.setText("hello world!!");
-                                    LinearLayout.LayoutParams lllp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                                            ViewGroup.LayoutParams.MATCH_PARENT);
-                                    textView1.setGravity(Gravity.CENTER);
-
-                                    textView1.setLayoutParams(lllp);
-                                    return textView1;
-                                }
-                            };
+                            return MainFragment.newInstance("测试1" + sectionNumber);
                         case 1:
-                            return new Fragment() {
-                                @Nullable
-                                @Override
-                                public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-                                    TextView textView1 = new TextView(container.getContext());
-                                    textView1.setText("memd");
-                                    LinearLayout.LayoutParams lllp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                                            ViewGroup.LayoutParams.MATCH_PARENT);
-                                    lllp.gravity = Gravity.CENTER;
-                                    textView1.setGravity(Gravity.CENTER);
-
-                                    textView1.setLayoutParams(lllp);
-                                    return textView1;
-                                }
-                            };
+                            return MainFragment.newInstance("测试2" + sectionNumber);
                         case 2:
-                            return new Fragment() {
-                                @Nullable
-                                @Override
-                                public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-                                    TextView textView1 = new TextView(container.getContext());
-                                    textView1.setText("呵呵");
-                                    LinearLayout.LayoutParams lllp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                                            ViewGroup.LayoutParams.MATCH_PARENT);
-                                    lllp.gravity = Gravity.CENTER;
-                                    textView1.setGravity(Gravity.CENTER);
-
-                                    textView1.setLayoutParams(lllp);
-                                    return textView1;
-                                }
-                            };
+                            return MainFragment.newInstance("测试3" + sectionNumber);
                         case 3:
-                            return new Fragment() {
-                                @Nullable
-                                @Override
-                                public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-                                    TextView textView1 = new TextView(container.getContext());
-                                    textView1.setText("么么哒");
-                                    LinearLayout.LayoutParams lllp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                                            ViewGroup.LayoutParams.MATCH_PARENT);
-                                    lllp.gravity = Gravity.CENTER;
-                                    textView1.setGravity(Gravity.CENTER);
-
-                                    textView1.setLayoutParams(lllp);
-                                    return textView1;
-                                }
-                            };
+                            return MainFragment.newInstance("测试4444444444" + sectionNumber);
                     }
                     return null;
                 }
@@ -270,7 +223,7 @@ public class MainActivity extends BaseActivity {
 
                 @Override
                 public CharSequence getPageTitle(int position) {
-                    return "ChildSection " + (position + 1);
+                    return "ChildSection " + (position + 1) + "##" + sectionNumber;
                 }
             });
 

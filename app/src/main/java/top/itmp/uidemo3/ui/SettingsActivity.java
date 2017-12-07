@@ -68,7 +68,7 @@ public class SettingsActivity extends BaseActivity {
         supportInvalidateOptionsMenu();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        final Drawable upArrow = getUpArrow(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+        final Drawable upArrow = getUpArrow(android.support.design.R.drawable.abc_ic_ab_back_material);
         // parse the UpArrow Color
         upArrow.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP);
 
